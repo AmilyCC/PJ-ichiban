@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8">
+    <title>測驗你的職場吉戰力</title>
+    <meta name="description" content="測驗你的職場吉戰力 chihuahua">
+    <link rel="shortcut icon" href="https://i.imgur.com/ePdFgZs.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <meta property="og:url" content="https://codepen.io/amilycc/pen/abQzqga" />
+    <meta property="og:title" content="測驗你的職場吉戰力" />
+    <meta property="og:description" content="測驗你的職場吉戰力 chihuahua" />
+    <meta property="og:image" content="https://i.imgur.com/ePdFgZs.png" />    
+  </head>
+  <body>
+  <div class="main">
+    <h1>測你的職場吉戰力</h1>
+    <div class="main-container" id="home-container">
+      <h2 class="sub-title">大吉大利 </h2>
+      <button id="start-button" class="button-v">開始測驗</button>
+    </div>
+    <div class="main-container" id="pre-test-container">
+      <h2 class="sub-title">填資料</h2>
+      <form id="pre-test-form" class="d-flex flex-column">
+        <!-- 填資料欄位 -->
+        <div class="input-group mb-3 border border-warning">
+          <label class="input-group-text" for="name">姓名:</label>
+          <input class="form-control" placeholder="請輸入姓名" type="text" id="name" required>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="gender">性別:</label>
+          <select class="form-control" id="gender">
+            <option value="">請選擇</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+            <option value="其他">其他</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="age">生日:</label>
+          <input class="form-control" type="date" id="age">
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="phone">手機:</label>
+          <input class="form-control" placeholder="0987654321" maxlength="10" type="tel" id="phone">
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="email">信箱:</label>
+          <input class="form-control" placeholder="123@email" type="email" id="email">
+        </div>
+        <button class="button-v" id="continue-button">繼續</button>
+      </form>
+    </div>
+
+    <div class="main-container" id="question-container">
+      <h2 id="question" class="sub-title question">
+        <span></span>
+        <p></p>
+      </h2>
+      <ul id="choices" class="choices">
+        <!-- 選項按鈕 -->
+      </ul>
+    </div>
+    <div class="main-container" id="result-container">
+      <p id="result" class="result"></p>
+      <p id="result-name" class="result"></p>
+      <p id="recommendation" class="recommendation"></p>
+      <img class="result-img" id="result-img">
+      <div class="d-flex flex-row flex-wrap">
+        <button id="share-fb" class="button-r FB">分享至FB</button>
+        <button id="save-image" class="button-r dl">保存圖片</button>
+        <button id="restart-button" class="button-r">重新測驗</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+  </body>
+</html>
