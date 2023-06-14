@@ -10,7 +10,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 const app = express()
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.PJICHIPAN_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+
 // 取得資料庫連線狀態
 const db = mongoose.connection
 // 連線異常
@@ -21,7 +22,7 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongodb connected!')
 })
-mongoose.connect(process.env.MONGODB_URI) // 設定連線到 mongoDB
+mongoose.connect(process.env.PJICHIPAN_URI) // 設定連線到 mongoDB
 
 
 // 設定首頁路由

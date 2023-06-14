@@ -11,7 +11,7 @@ const testSchema = new Schema({
       required: false 
     },
     age: {
-      type: String, 
+      type: Number, 
       required: false 
     },
     phone: {

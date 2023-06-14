@@ -149,7 +149,26 @@ var view = {
     this.toggleContainer(questionContainer, true);
     this.toggleContainer(resultContainer, false);
   },
-
+  getResult: function (score) {
+    var result = model.results.find(function (result) {
+      if (score >= result.minScore && score <= result.maxScore) {
+        return result.recommendation;
+      }
+    });
+    return result
+      ? {
+          recommendation: result.recommendation,
+          img: result.img
+        }
+      : {
+          recommendation: "",
+          img: ""
+        };
+  },
+  updateOGTags: function (image) {
+    var ogImageTag = document.querySelector('meta[property="og:image"]');
+    ogImageTag.content = image;
+  },
   displayResult: function () {
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
@@ -171,22 +190,7 @@ var view = {
     var img = result.img;
     recommendationEle.textContent = recommendation;
     resultImg.setAttribute("src", img);
-  },
-  getResult: function (score) {
-    var result = model.results.find(function (result) {
-      if (score >= result.minScore && score <= result.maxScore) {
-        return result.recommendation;
-      }
-    });
-    return result
-      ? {
-          recommendation: result.recommendation,
-          img: result.img
-        }
-      : {
-          recommendation: "",
-          img: ""
-        };
+    this.updateOGTags(img);
   }
 };
 
