@@ -70,6 +70,18 @@ var view = {
     var ogImageTag = document.querySelector('meta[property="og:image"]');
     ogImageTag.content = image;
   },
+  saveImg: function (img) {
+    // 綁定保存圖片按鈕的點擊事件
+    saveButton.addEventListener("click", function () {
+      // 建立虛擬連結（用於下載圖片）
+      var link = document.createElement("a");
+      link.href = img;
+      link.download = "gi-image.png";
+      link.target = "_blank";
+      link.click();
+      link.remove();
+    });
+  },
   displayResult: function () {
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
@@ -84,6 +96,7 @@ var view = {
     recommendationEle.textContent = recommendation;
     resultImg.setAttribute("src", img);
     this.updateOGTags(img);
+    this.saveImg(img);
   },
   submitForm: function () {
     // 获取需要提交的数据

@@ -8,6 +8,7 @@ const resultImg = document.getElementById("result-img");
 const choicesElement = document.getElementById("choices");
 const questionNum = document.querySelector("#question span");
 const questionContent = document.querySelector("#question p");
+const saveButton = document.getElementById("save-image");
 
 // 監聽開始測驗按鈕
 document.getElementById("start-button").addEventListener("click", function () {
