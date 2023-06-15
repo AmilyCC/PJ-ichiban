@@ -1,4 +1,3 @@
-<div class="main">
   <h1>測你的職場吉戰力</h1>
   <div class="main-container" id="home-container">
     <h2 class="sub-title">大吉大利 </h2>
@@ -6,15 +5,15 @@
   </div>
   <div class="main-container" id="pre-test-container">
     <h2 class="sub-title">填資料</h2>
-    <form id="pre-test-form" class="d-flex flex-column">
+    <form action="/" method="POST" id="pre-test-form" class="d-flex flex-column">
       <!-- 填資料欄位 -->
       <div class="input-group mb-3 border border-warning">
-        <label class="input-group-text" for="name">姓名:</label>
-        <input class="form-control" placeholder="請輸入姓名" type="text" id="name" required>
+        <label class="input-group-text"for="name">姓名:</label>
+        <input class="form-control" placeholder="請輸入姓名" type="text" name="name"  id="name" required>
       </div>
       <div class="input-group mb-3">
         <label class="input-group-text" for="gender">性別:</label>
-        <select class="form-control" id="gender">
+        <select name="gender" class="form-control" id="gender">
           <option value="">請選擇</option>
           <option value="男">男</option>
           <option value="女">女</option>
@@ -23,17 +22,17 @@
       </div>
       <div class="input-group mb-3">
         <label class="input-group-text" for="age">生日:</label>
-        <input class="form-control" type="date" id="age">
+        <input name="age" class="form-control" type="date" id="age">
       </div>
       <div class="input-group mb-3">
         <label class="input-group-text" for="phone">手機:</label>
-        <input class="form-control" placeholder="0987654321" maxlength="10" type="tel" id="phone">
+        <input name="phone" class="form-control" placeholder="0987654321" maxlength="10" type="tel" id="phone">
       </div>
       <div class="input-group mb-3">
         <label class="input-group-text" for="email">信箱:</label>
-        <input class="form-control" placeholder="123@email" type="email" id="email">
+        <input name="email" class="form-control" placeholder="123@email" type="email" id="email">
       </div>
-      <button class="button-v" id="continue-button">繼續</button>
+      <input type="submit" class="button-v" id="continue-button" value="繼續">
     </form>
   </div>
 
@@ -64,4 +63,3 @@
       <button id="restart-button" class="button-r">重新測驗</button>
     </div>
   </div>
-</div>

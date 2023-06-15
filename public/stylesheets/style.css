@@ -61,6 +61,7 @@ h1 {
 }
 .button-r {
   width: 15vw;
+  min-width: 100px;
   min-height: 30px;
   height: 4vh;
   margin: 10px;
