@@ -5,7 +5,6 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const {Datastore} = require('@google-cloud/datastore'); // 載入google datastore
 
-
 //// mongodb
 // mongoose.connect(process.env.PJICHIPAN_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 // const Test = require('./models/test')
