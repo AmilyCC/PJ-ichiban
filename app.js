@@ -51,7 +51,9 @@ app.get('/', (req, res) => {
 
 async function InsertRecord(record){
   const kind = 'Task';
-  const name = 'PJ-Ichiban_info';
+  const timestamp = Date.now();
+  const unix = Math.floor(timestamp / 1000);
+  const name = 'Ichiban_' + unix;
   const taskKey = datastore.key([kind, name])
   const task = {
     key: taskKey,
@@ -59,16 +61,22 @@ async function InsertRecord(record){
   };
 
   await datastore.save(task);
-  console.log(`Saved record.`)
 };
 
 app.post('/', (req, res) => {
   const info = req.body.info
+  const age = (typeof info.age === 'undefined') ? '' : info.age;
+  const phone = (typeof info.phone === 'undefined') ? '' : info.phone;
+  const email = (typeof info.email === 'undefined') ? '': info.email;
   const myScores = req.body.myScores
   const full_info = {
-    'info': info,
-    'myScores': myScores,
-    'datetime': new Date()
+    info_name: info.name,
+    info_gender: info.gender,
+    info_age: age,
+    info_phone: phone,
+    info_email: email,
+    myScores: myScores,
+    datetime: new Date()
   };
   console.log(full_info);
   return InsertRecord(full_info)

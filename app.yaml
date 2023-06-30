@@ -1,0 +1,12 @@
+runtime: nodejs18
+instance_class: F1
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+  min_idle_instances: 0
+  max_idle_instances: automatic
+  target_cpu_utilization: 0.7
+  target_throughput_utilization: 0.6
+  max_concurrent_requests: 20
+  max_pending_latency: 1s
+  min_pending_latency: automatic
