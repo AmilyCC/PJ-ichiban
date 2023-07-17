@@ -9,6 +9,7 @@ var view = {
     }
   },
   displayHome: function () {
+    this.toggleContainer(marquee, true);
     this.toggleContainer(homeContainer, true);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, false);
@@ -17,14 +18,15 @@ var view = {
   },
 
   displayPreTest: function () {
+    this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, true);
     this.toggleContainer(questionContainer, false);
     this.toggleContainer(resultContainer, false);
   },
   displayQuestion: function () {
-    questionNum.textContent = `問題 ${model.currentQuestion + 1}:`;
-    questionContent.textContent =
+    questionNum.src = model.questions[model.currentQuestion].img;
+    questionContent.innerHTML =
       model.questions[model.currentQuestion].question;
     choicesElement.innerHTML = "";
 
@@ -44,7 +46,7 @@ var view = {
       li.appendChild(button);
       choicesElement.appendChild(li);
     });
-
+    this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, true);
@@ -83,6 +85,7 @@ var view = {
     });
   },
   displayResult: function () {
+    this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, false);

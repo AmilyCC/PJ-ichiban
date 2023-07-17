@@ -1,3 +1,4 @@
+const marquee = document.getElementById("marquee");
 const homeContainer = document.getElementById("home-container");
 const preTestContainer = document.getElementById("pre-test-container");
 const questionContainer = document.getElementById("question-container");
@@ -6,7 +7,7 @@ const resultName = document.getElementById("result-name");
 const recommendationEle = document.getElementById("recommendation");
 const resultImg = document.getElementById("result-img");
 const choicesElement = document.getElementById("choices");
-const questionNum = document.querySelector("#question span");
+const questionNum = document.querySelector("#question img");
 const questionContent = document.querySelector("#question p");
 const saveButton = document.getElementById("save-image");
 
@@ -15,7 +16,7 @@ document.getElementById("start-button").addEventListener("click", function () {
   controller.preTest();
 });
 
-// 表單內容
+// 開始測驗
 document
   .getElementById("pre-test-form")
   .addEventListener("submit", function (e) {
