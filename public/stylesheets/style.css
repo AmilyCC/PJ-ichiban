@@ -1,9 +1,12 @@
 /* common START */
 * {
   box-sizing: border-box;
+  background-color: transparent;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 body{
     overflow:hidden;
+    font-size: 16px;
 }
 
 img{
@@ -11,8 +14,8 @@ img{
 }
 
 .main-bg {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image:url(../image/sp_top/BK_50x50.png);
   background-repeat: repeat;
   background-size: 2vw;
@@ -79,14 +82,15 @@ img{
 .top_icon_14 {
     width: 4%;
     max-width: 25px;
-    top: 75%;
-    left: 3vmax;
+    top: 70%;
+    left: 1vw;
 }
 .top_icon_18 {
     width: 7%;
     max-width: 36px;
-    top: 90%;
+    top: 96%;
     right: 4vw;
 }
+
 
 /* common END */

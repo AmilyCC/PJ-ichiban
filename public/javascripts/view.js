@@ -18,6 +18,9 @@ var view = {
   },
 
   displayPreTest: function () {
+    document.querySelector('.top_icon_03').style.top = '9%'
+    document.querySelector('.top_icon_05').style.top = '10%'
+    document.querySelector('.top_icon_14').style.top = '80%'
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, true);
@@ -25,11 +28,11 @@ var view = {
     this.toggleContainer(resultContainer, false);
   },
   displayQuestion: function () {
+    timeLine.style.width = `${(model.currentQuestion+1)*10+1}%`
     questionNum.src = model.questions[model.currentQuestion].img;
     questionContent.innerHTML =
       model.questions[model.currentQuestion].question;
     choicesElement.innerHTML = "";
-
     model.questions[model.currentQuestion].choices.map(function (
       choice,
       index
@@ -55,17 +58,26 @@ var view = {
   getResult: function () {
     var result = model.results.find(function (result) {
       if ( model.myScores  >= result.minScore &&  model.myScores  <= result.maxScore) {
-        return result.recommendation;
+        return  {
+          title: result.title,
+          recommendation: result.recommendation,
+          page_img: result.page_img,
+          save_img: result.save_img
+        };
       }
     });
     return result
       ? {
+          title: result.title,
           recommendation: result.recommendation,
-          img: result.img
+          page_img: result.page_img,
+          save_img: result.save_img
         }
       : {
+          title: "",
           recommendation: "",
-          img: ""
+          page_img: "",
+          save_img: ""
         };
   },
   updateOGTags: function (image) {
@@ -91,15 +103,17 @@ var view = {
     this.toggleContainer(questionContainer, false);
     this.toggleContainer(resultContainer, true);
 
-    // document.getElementById("result").textContent = "勞累分數：" + score;
-    resultName.textContent = `${model.info.name} 的吉戰力：`;
+    resultName.innerHTML = `<span>${model.info.name}</span>，你是個`;
     var result = this.getResult(model.myScores);
+    var title = result.title;
     var recommendation = result.recommendation;
-    var img = result.img;
-    recommendationEle.textContent = recommendation;
-    resultImg.setAttribute("src", img);
-    this.updateOGTags(img);
-    this.saveImg(img);
+    var pageImg = result.page_img;
+    var saveImg = result.save_img;
+    titleEle.textContent = title;
+    recommendationEle.innerHTML = recommendation;
+    resultImg.setAttribute("src", pageImg);
+    this.updateOGTags(saveImg);
+    this.saveImg('..' + saveImg);
   },
   submitForm: function () {
     // 获取需要提交的数据

@@ -7,23 +7,29 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin: 10px 0;
 }
 .input-ttl {
     width: 30%;
     max-width: 150px;
+    height: 75%;
+    display: flex;
     z-index: 3;
     background-color: #FFF;
     border: 2px solid #000;
-    padding: 10px 20px;
     border-radius: 100px;
     top: -30%;
+    padding: 0.1rem 0.2rem;
+}
+.input-ttl > img {
+    width: 75%;
+    margin: auto;
 }
 .input-required:before {
     content: "*必填";
     position: absolute;
     right: 10%;
-    bottom: 10%;
-    font-family: 'Noto Sans TC', sans-serif;
+    bottom: 20%;
     color: #000;
     font-weight: 600;
     font-size: 0.5rem;
@@ -50,13 +56,12 @@
     border-radius: 100px;
     background-color: #FFF;
     box-shadow: 6px 7px 1px rgb(195 195 195);
-    font-family: 'Noto Sans TC', sans-serif;
-    padding: 10px 30px;
+    padding: 0 30px;
     font-size: 1rem;
     text-align: center;
 }
 .input-ctrl select {
-    width: 95%;
+    width: 100%;
     border: none;
     background-color: transparent;
     text-align: center;
@@ -64,7 +69,6 @@
 
 .button-c {
     width: 30%;
-    min-height: 50px;
     height: 8vh;
     margin: 10px auto;
     border: 0;
@@ -72,4 +76,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
+}
+
+@media screen and (min-width: 310px) and (max-width: 600px) {
+    .input-ctrl {
+        font-size: 0.5rem;
     }
+}

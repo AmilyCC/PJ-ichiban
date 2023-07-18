@@ -113,12 +113,12 @@
   <div class="main-container" id="pre-test-container">
     <form action="/" method="POST" id="pre-test-form" class="d-flex flex-column form-gp">
       <!-- 填資料欄位 -->
-      <div class="mb-4 input-gp pos-rlv input-required">
-        <label class="input-group-text input-ttl pos-abs" for="name"><img src="/static/image/p2/p2_03.png"></label>
+      <div class="input-gp pos-rlv input-required">
+        <label class="input-ttl pos-abs" for="name"><img src="/static/image/p2/p2_03.png"></label>
         <input class="input-ctrl" placeholder="請輸入姓名" type="text" name="name"  id="name" required>
       </div>
-      <div class="mb-4 input-gp pos-rlv">
-        <label class="input-group-text input-ttl pos-abs" for="gender"><img src="/static/image/p2/p2_06.png"></label>
+      <div class="input-gp pos-rlv">
+        <label class="input-ttl pos-abs" for="gender"><img src="/static/image/p2/p2_06.png"></label>
         <div class="input-ctrl">
           <select name="gender" id="gender">
             <option value="">請選擇</option>
@@ -128,23 +128,26 @@
           </select>
         </div>
       </div>
-      <div class="mb-4 input-gp pos-rlv">
-        <label class="input-group-text input-ttl pos-abs" for="age"><img src="/static/image/p2/p2_08.png"></label>
+      <div class="input-gp pos-rlv">
+        <label class="input-ttl pos-abs" for="age"><img src="/static/image/p2/p2_08.png"></label>
         <input name="age" class="input-ctrl" type="date" id="age">
       </div>
-      <div class="mb-4 input-gp pos-rlv">
-        <label class="input-group-text input-ttl pos-abs" for="phone"><img src="/static/image/p2/p2_10.png"></label>
+      <div class="input-gp pos-rlv">
+        <label class="input-ttl pos-abs" for="phone"><img src="/static/image/p2/p2_10.png"></label>
         <input name="phone" class="input-ctrl" placeholder="0987654321" maxlength="10" type="tel" id="phone">
       </div>
-      <div class="mb-4 input-gp pos-rlv">
-        <label class="input-group-text input-ttl pos-abs" for="email"><img src="/static/image/p2/p2_12.png"></label>
+      <div class="input-gp pos-rlv">
+        <label class="input-ttl pos-abs" for="email"><img src="/static/image/p2/p2_12.png"></label>
         <input name="email" class="input-ctrl" placeholder="123@email" type="email" id="email">
       </div>
-      <input type="submit" class="button-c" id="continue-button">
+      <input type="submit" class="button-c" id="continue-button" value="">
     </form>
   </div>
 
   <div class="main-container" id="question-container">
+    <div class="time-line-gp">
+      <div class="time-line" id="time-line"></div>
+    </div>
     <div id="question" class="sub-title question">
       <img src="">
       <p></p>
@@ -153,22 +156,44 @@
       <!-- 選項按鈕 -->
     </ul>
   </div>
-  <div class="main-container" id="result-container">
-    <p id="result" class="result"></p>
-    <p id="result-name" class="result"></p>
-    <p id="recommendation" class="recommendation"></p>
-    <img class="result-img" id="result-img">
-    <div class="button-g d-flex flex-row flex-wrap">
-      <!--       <div class="button-r FB"> -->
-      <div class="fb-share-button" data-href="https://dactw-dpu-ichibantest-2023.de.r.appspot.com/"
-        data-layout="button" data-size="large">
-        <a target="_blank"
-          href="https://www.facebook.com/sharer/sharer.php?u=https://dactw-dpu-ichibantest-2023.de.r.appspot.com/"
-          class="fb-xfbml-parse-ignore button-r FB">分享至FB</a>
-        <!--         </div> -->
+  <div class="main-container pos-rlv" id="result-container">
+    <div class="result-gp progress-part pos-abs" id="progress-part">
+      <img class="p4_03" src="../static/image/p4/p4_03.png">
+      <div class="progress-bar-gp">
+        <div class="progress-bar-item"></div>
       </div>
-      <button id="save-image" class="button-r dl">保存圖片</button>
-      <button id="restart-button" class="button-r">重新測驗</button>
+      <img class="p4_07" src="../static/image/p4/p4_07.png">
+    </div>
+    <div class="result-gp result-part pos-abs" id="result-part">
+      <p id="result-name" class="result"></p>
+      <img class="result-img" id="result-img">
+      <h3 id="result-title" class="result-title"></h3>
+      <div class="recommendation-gp pos-rlv">
+        <img class="r-arrow pos-abs" src="../static/image/p5/p5_07.png">
+        <p id="recommendation" class="recommendation"></p>
+      </div>
+      <div class="share-btn-gp">
+        <img src="../static/image/p5/p5_10.png" alt="" class="share-txt">
+        <div class="button-g">
+          <!-- FB share START-->
+          <div class="fb-share-button" data-href="https://dactw-dpu-ichibantest-2023.de.r.appspot.com/" data-layout="button"
+            data-size="large">
+            <a target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://dactw-dpu-ichibantest-2023.de.r.appspot.com/"
+              class="fb-xfbml-parse-ignore FB"></a>
+          </div>
+          <!-- FB share END -->
+          <!-- LINE share START-->
+          <a class="line-it-button" target="_blank" href="https://social-plugins.line.me/lineit/share?url=https://dactw-dpu-ichibantest-2023.de.r.appspot.com&text=吉刻了解你的職場吉戰力" ></a>
+          
+          <!-- LINE share END-->
+        </div>
+      </div>
+      <div class="button-g-s">
+        <button id="restart-button" class="button-r"></button>
+        <button id="save-image" class="button-r"></button>
+        <button id="collection-button" class="button-r"></button>
+      </div>
     </div>
   </div>
 </div>

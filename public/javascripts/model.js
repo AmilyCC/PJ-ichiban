@@ -71,32 +71,34 @@ var model = {
     {
       minScore: 0,
       maxScore: 2,
-      recommendation: "摳尼吉娃",
-      img: "https://i.imgur.com/OxT9HGM.png"
+      title:"你是職場乖寶寶",
+      recommendation: "吉戰力如同新生兒寶寶！<br>快醒醒！注意觀察那些看不見的潛規則，小心被他人衝康",
+      page_img:"../static/image/p5/p5_00.png",
+      save_img:"/static/image/end/end_a.jpg"
     },
     {
       minScore: 3,
-      maxScore: 4,
-      recommendation: "超愛炭吉",
-      img: "https://i.imgur.com/AOMKu5F.png"
+      maxScore: 5,
+      title:"你是職場一般人",
+      recommendation: "吉戰力一般般～<br>略懂職場的暗潮洶湧，但還不懂衝康，未來有機會吉戰力滿點",
+      page_img: "../static/image/p5/p5_00.png",
+      save_img:"/static/image/end/end_b.jpg"
     },
     {
-      minScore: 5,
-      maxScore: 7,
-      recommendation: "溜之大吉",
-      img: "https://i.imgur.com/NRhQcpu.png"
+      minScore: 6,
+      maxScore: 8,
+      title:"你是職場老油條",
+      recommendation: "吉戰力超高！<br>不管遇到多麻煩的事都可以全身而退，甚至還帶走一點功勞！",
+      page_img: "../static/image/p5/p5_02.png",
+      save_img:"/static/image/end/end_c.jpg"
     },
     {
-      minScore: 8,
-      maxScore: 9,
-      recommendation: "吉度邪惡",
-      img: "https://i.imgur.com/852o789.png"
-    },
-    {
-      minScore: 10,
-      maxScore: Infinity,
-      recommendation: "林北五吉",
-      img: "https://i.imgur.com/oTJ5fhQ.png"
+      minScore: 9,
+      maxScore: 10,
+      title:"你是職場雙面人",
+      recommendation: "吉戰力MAX！<br>人前講一套、人後做一套，為達自身目的你會不擇手段！",
+      page_img: "../static/image/p5/p5_03.png",
+      save_img:"/static/image/end/end_d.jpg"
     }
     // 更多結果...
   ],
