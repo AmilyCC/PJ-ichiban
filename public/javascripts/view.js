@@ -18,9 +18,10 @@ var view = {
   },
 
   displayPreTest: function () {
-    document.querySelector('.top_icon_03').style.top = '9%'
+    document.querySelector('.top_icon_03').style.top = '7%'
     document.querySelector('.top_icon_05').style.top = '10%'
-    document.querySelector('.top_icon_14').style.top = '80%'
+    document.querySelector('.top_icon_14').style.top = '78%'
+    document.querySelector('.top_icon_18').style.top = '95%'
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, true);

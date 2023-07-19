@@ -1,9 +1,11 @@
 @keyframes appear {
   0%{
     opacity: 0;
+    transform: scale(0);
   }
   100%{
     opacity: 1;
+    transform: scale(1);
   }
 }
 @keyframes disappear {
@@ -36,20 +38,20 @@
 .result-gp {
   width: 90%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  flex-direction: column;  
+  align-items: center;
   justify-content: center;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
 .progress-part{
-  align-items: center;
-  justify-content: center;
+  display: flex;
   animation-name: disappear;
   animation-duration: 3s;
 }
 .result-part{
   opacity: 0;
+  display: flex;
   animation-name: appear;
   animation-duration: 0.1s;
   animation-delay: 3s;
@@ -150,8 +152,8 @@
     flex-direction: row;
 }
 .FB {
-    width: 10vmin;
-    height: 10vmin;
+    width: 9vmin;
+    height: 9vmin;
     display: block;
     background-image: url(../image/p5/p5_08.png);
     background-size: 100% 100%;
@@ -159,8 +161,8 @@
 }
 
 .line-it-button {
-    width: 10vmin;
-    height: 10vmin;
+    width: 9vmin;
+    height: 9vmin;
     display: block;
     background-image: url(../image/p5/p5_09.png);
     background-size: 100% 100%;
@@ -171,7 +173,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 5vh;
+  height: 6vh;
   max-height: 50px;
 }
 .button-r{
@@ -189,9 +191,26 @@
   background-image: url(../image/p5/p5_12.png);
 }
 #collection-button{
-  background-image: url(../image/p5/p5_11.png);
+  background-image: url(../image/p5/p5_13.png);
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 900px) {
+  .result{
+    font-size: 1.2em;
+  }
+  .result-img{
+    width: 55%;
+  }
+  .result-title{
+    font-size: 1em;
+  }
+  .recommendation{
+    font-size: 0.8em;
+  }
+}
 
+@media only screen and (max-width: 768px), (height <= 700px) {
+  .button-g-s {
+    height: 6vmax;
+  }
 }

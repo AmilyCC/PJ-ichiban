@@ -81,7 +81,7 @@ var model = {
       maxScore: 5,
       title:"你是職場一般人",
       recommendation: "吉戰力一般般～<br>略懂職場的暗潮洶湧，但還不懂衝康，未來有機會吉戰力滿點",
-      page_img: "../static/image/p5/p5_00.png",
+      page_img: "../static/image/p5/p5_01.png",
       save_img:"/static/image/end/end_b.jpg"
     },
     {
