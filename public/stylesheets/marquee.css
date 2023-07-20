@@ -36,7 +36,7 @@
 }
 
 
-@keyframes animate {
+@keyframes marquee {
   0% {
     transform: translatex(100%);
   }
@@ -44,7 +44,7 @@
     transform: translatex(-100%);
   }
 }
-@keyframes animate2 {
+@keyframes marquee2 {
   0% {
     transform: translatex(0%);
   }
@@ -59,10 +59,10 @@
 }
 .logo-wrapper {
   display: flex;
-  animation: animate 40s linear infinite;
+  animation: marquee 40s linear infinite reverse;
 }
 .logo-wrapper:nth-child(2) {
-  animation: animate2 40s linear infinite;
+  animation: marquee2 40s linear infinite reverse;
   animation-delay: -20s;
 }
 .logo {

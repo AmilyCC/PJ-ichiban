@@ -12,7 +12,7 @@ const recommendationEle = document.getElementById("recommendation");
 const titleEle = document.getElementById("result-title");
 const resultImg = document.getElementById("result-img");
 const saveButton = document.getElementById("save-image");
-
+const infoContainer = document.getElementById("info-container");
 // 監聽開始測驗按鈕
 document.getElementById("start-button").addEventListener("click", function () {
   controller.preTest();
@@ -31,5 +31,13 @@ document
   .addEventListener("click", function () {
     controller.restart();
   });
+
+// 跳至吉刻收藏
+document
+  .getElementById("to-collect")
+  .addEventListener("click", function () {
+    controller.collection();
+  });
+
 // 啟動測驗，顯示首頁
 view.displayHome();

@@ -89,12 +89,16 @@
 }
 
 .result {
-  width: 100%;
-  font-size: 1.8em;
-  letter-spacing: 5px;
-  font-weight: 800;
-  color: #000;
-  margin: 0 ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    font-size: 1.8em;
+    letter-spacing: 5px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 ;
 }
 .result span {
     color: #f5cfa9;
@@ -102,23 +106,31 @@
 }
 
 .result-img {
-  width: 70%;
-  height: auto;
-  margin: 10px auto;
+    width: auto;
+    height: 35%;
+    margin: 10px auto;
 }
 .result-title {
     width: 100%;
-    display: block;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #FFF;
     border: 2px solid #000;
     border-radius: 50px;
     padding: 5px;
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 800;
     text-align: center;
 }
 .recommendation-gp {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #f5cfa9;
+    box-shadow: 6px 6px 1px rgb(195 195 195);
     border: 2px solid #000;
     border-radius: 20px;
     padding: 5%;
@@ -131,19 +143,20 @@
 .recommendation {
     width: 90%;
     margin: auto;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 900;
     color: #000;
 }
 .share-btn-gp {
+    height: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin: 2% 0;
 }
 .share-txt {
-    width: 45%;
+    width: 35%;
 }
 .button-g {
     width: 45%;
@@ -154,6 +167,8 @@
 .FB {
     width: 9vmin;
     height: 9vmin;
+    min-width: 45px;
+    min-height: 45px;
     display: block;
     background-image: url(../image/p5/p5_08.png);
     background-size: 100% 100%;
@@ -163,54 +178,77 @@
 .line-it-button {
     width: 9vmin;
     height: 9vmin;
+    min-width: 45px;
+    min-height: 45px;
     display: block;
     background-image: url(../image/p5/p5_09.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 .button-g-s{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 6vh;
-  max-height: 50px;
+    width: 100%;
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 50px;
 }
 .button-r{
-  width: 30%;
-  height: 100%;
-  display: block;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  border: none;
+    width: 30%;
+    height: 100%;
+    display: block;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: none;
 }
 #restart-button{
-  background-image: url(../image/p5/p5_11.png);
+    background-image: url(../image/p5/p5_11.png);
 }
 #save-image{
-  background-image: url(../image/p5/p5_12.png);
+    background-image: url(../image/p5/p5_12.png);
 }
-#collection-button{
-  background-image: url(../image/p5/p5_13.png);
+#to-collect{
+    background-image: url(../image/p5/p5_13.png);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1550px), (height <= 750px) {
+  .recommendation{
+    font-size: 1.25em;
+  }
+}
+
+@media only screen and (max-width: 900px), (height <= 700px) {
+  .result{
+    font-size: 1.5em;
+  }
+  .result-title{
+    font-size: 1.5em;
+  }
+  .recommendation{
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 600px), (height <= 700px) {
   .result{
     font-size: 1.2em;
-  }
-  .result-img{
-    width: 55%;
   }
   .result-title{
     font-size: 1em;
   }
   .recommendation{
-    font-size: 0.8em;
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 500px), (height <= 700px) {
+  .result{
+    font-size: 1.2em;
+  }
+  .result-title{
+    font-size: 1em;
+  }
+  .recommendation{
+    font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 768px), (height <= 700px) {
-  .button-g-s {
-    height: 6vmax;
-  }
-}

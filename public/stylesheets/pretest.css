@@ -59,7 +59,7 @@
     background-color: #FFF;
     box-shadow: 6px 7px 1px rgb(195 195 195);
     padding: 0 30px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 .input-ctrl select {
@@ -80,16 +80,14 @@
     background-color: transparent;
 }
 
-@media screen  and (max-width: 900px), (height <= 700px) {
-    
-}
+
 @media screen  and (max-width: 768px) {
     .button-c{
         height: 100vmax;
         max-height: 50px;
     }
 }
-@media screen and (min-width: 310px) and (max-width: 600px) {
+@media screen and (min-width: 310px) and (max-width: 600px) and (height <= 700px)  {
     .input-ctrl {
         font-size: 0.5rem;
     }

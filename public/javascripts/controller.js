@@ -57,5 +57,9 @@ var controller = {
   restart: function () {
     this.clearData();
     view.displayHome();
+  },
+
+  collection: function () {
+    view.displaycollection();
   }
 };

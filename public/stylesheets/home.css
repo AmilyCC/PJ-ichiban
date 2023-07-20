@@ -8,7 +8,7 @@
 .first-view {
   width: 90%;
   margin: 0 auto;
-  top: 25%;
+  top: 22%;
   animation: moving_tb 1s linear infinite alternate .1s;
 }
 .button-s{
@@ -20,6 +20,7 @@
   top: 70%;
   cursor: pointer;
   z-index: 5;
+  animation: zoom_inout .2s linear infinite alternate;
 }
 
 

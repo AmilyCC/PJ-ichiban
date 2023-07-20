@@ -13,20 +13,22 @@ var view = {
     this.toggleContainer(homeContainer, true);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, false);
-    this.toggleContainer(resultContainer, false);
+    this.toggleContainer(resultContainer, false);    
+    this.toggleContainer(infoContainer, false);
     controller.clearData();
   },
 
   displayPreTest: function () {
-    document.querySelector('.top_icon_03').style.top = '7%'
+    document.querySelector('.top_icon_03').style.top = 'ˇ%'
     document.querySelector('.top_icon_05').style.top = '10%'
-    document.querySelector('.top_icon_14').style.top = '78%'
+    document.querySelector('.top_icon_14').style.top = '82%'
     document.querySelector('.top_icon_18').style.top = '95%'
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, true);
     this.toggleContainer(questionContainer, false);
-    this.toggleContainer(resultContainer, false);
+    this.toggleContainer(resultContainer, false);  
+    this.toggleContainer(infoContainer, false);
   },
   displayQuestion: function () {
     timeLine.style.width = `${(model.currentQuestion+1)*10+1}%`
@@ -54,7 +56,8 @@ var view = {
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, true);
-    this.toggleContainer(resultContainer, false);
+    this.toggleContainer(resultContainer, false);  
+    this.toggleContainer(infoContainer, false);
   },
   getResult: function () {
     var result = model.results.find(function (result) {
@@ -102,7 +105,8 @@ var view = {
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, false);
-    this.toggleContainer(resultContainer, true);
+    this.toggleContainer(resultContainer, true);  
+    this.toggleContainer(infoContainer, false);
 
     resultName.innerHTML = `<span>${model.info.name}</span>，你是個`;
     var result = this.getResult(model.myScores);
@@ -143,5 +147,14 @@ var view = {
     .catch(error => {
       console.error(error);
     });
+  },
+  displaycollection(){
+    this.toggleContainer(marquee, false);
+    this.toggleContainer(homeContainer, false);
+    this.toggleContainer(preTestContainer, false);
+    this.toggleContainer(questionContainer, false);
+    this.toggleContainer(resultContainer, false);
+    this.toggleContainer(infoContainer, true);
+    
   }
 };
