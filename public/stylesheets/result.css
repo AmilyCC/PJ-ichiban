@@ -1,5 +1,55 @@
+.main-container-item {
+    width: 100%;
+    height: 100vh;
+    max-width: 490px;
+    max-height: 932px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    overflow: hidden;
+}
+.info-container {
+    width: 95%;
+    height:95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-container:first-child {
+    margin: 100vh 0 0;
+}
+@keyframes height0{
+  0%{
+    height:100vmax;
+  }
+  90%{
+    height:100vmax;
+  }
+  100%{
+    height:190vmax;
+  }
+}
+
+@keyframes height1{
+  0%{
+    height:100vmax;
+  }
+  90%{
+    height:100vmax;
+  }
+  100%{
+    height:180vmax;
+  }
+}
+
 @keyframes appear {
   0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  90%{
     opacity: 0;
     transform: scale(0);
   }
@@ -36,7 +86,7 @@
   }
 }
 .result-gp {
-  width: 90%;
+  width: 95%;
   height: 100%;
   flex-direction: column;  
   align-items: center;
@@ -44,6 +94,7 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
+
 .progress-part{
   display: flex;
   animation-name: disappear;
@@ -54,8 +105,17 @@
   display: flex;
   animation-name: appear;
   animation-duration: 0.1s;
-  animation-delay: 3s;
+  animation-delay: 3.1s;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
+
+.result-part:hover{
+    overflow-y: scroll;
+    width: calc(95% + 8px);
+    margin-left: 8px;
+}
+
 .p4_03 {
     width: 50%;
     margin: 0 0 20px 0;
@@ -101,8 +161,8 @@
     margin: 0 ;
 }
 .result span {
-    color: #f5cfa9;
-    text-shadow: 2px 3px 1px #000;
+    color: #000;
+    background: linear-gradient(180deg, transparent 50%,#f5cfa9 50%);
 }
 
 .result-img {
@@ -187,7 +247,7 @@
 }
 .button-g-s{
     width: 100%;
-    height: 6%;
+    height: 8%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -197,7 +257,7 @@
     width: 30%;
     height: 100%;
     display: block;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     border: none;
 }
@@ -211,9 +271,136 @@
     background-image: url(../image/p5/p5_13.png);
 }
 
+
+#info-container{
+    justify-content: space-evenly;
+}
+    
+.p6_03 {
+    width: 50%;
+}
+.p6_06 {
+    width: 20%;
+    right: 0;
+    top: 20%;
+    animation: rotate_01 1s linear infinite alternate;
+}
+.p6_10 {
+    width: 60%;
+}
+.invite-u {
+    width: 80%;
+    margin: 0;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: 500;
+}
+.join-info {
+    width: 90%;
+    height: 30%;
+    margin: 5% 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #f5cfa9;
+    box-shadow: 6px 6px 1px rgb(195 195 195);
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 5%;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.join-info h3 {
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding: 0 ;
+    margin: 5px 0;
+}
+
+.join-info p {  
+    overflow-y: auto;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    padding: 0 0 5%;
+}
+
+.info-sub-ttl{
+  display: block;
+  margin-top: 15px;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.checkbox-gp{
+  width: 90%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]+span {
+  display: inline-block;
+  padding-left: 50px;
+  line-height: 55px;
+  background-image: url(../image/p6/p6_16.png);
+  background-size: 12%;
+  background-repeat: no-repeat;
+  background-position: center left;
+  user-select: none;
+  font-size: 1.1em;
+}
+input[type="checkbox"]:checked+span {
+  background-image: url(../image/p6/p6_18.png) ;
+}
+
+.check-and-go {
+  position: relative;
+  width: 50%;
+  height: 70%;
+  min-height: 50px;
+  max-height: 70px;
+  display: block;
+  pointer-events: initial;
+}
+#collection-button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  border: none;
+  background-image: url(../image/p6/p6_20.png);
+}
+input[type="checkbox"]:checked ~ .check-and-go #collection-button {
+  background-image: url(../image/p6/p6_22.png) ;
+  animation: zoom_inout .2s linear infinite alternate;
+  pointer-events: initial;
+  z-index: 3;
+}
+.not-allowed{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: initial;
+  cursor: not-allowed;
+  z-index: 2;
+}
+
+
 @media only screen and (max-width: 1550px), (height <= 750px) {
   .recommendation{
-    font-size: 1.25em;
+    font-size: 1.2em;
+  }
+  .join-info h3{
+    font-size:1.5em;
   }
 }
 
@@ -250,5 +437,75 @@
   .recommendation{
     font-size: 1em;
   }
+  .p6_06{
+    top: 18%;
+  }
 }
 
+
+@media screen and (min-width: 491px), (height <= 700px){
+  .p6_06{
+    display: none;
+  }
+}
+@media screen and (max-width: 491px), (height <= 700px){
+  .join-info h3{  
+    font-size: 1.5em;
+  }
+  .join-info p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 350px), (height <= 700px){
+  .join-info h3{  
+    font-size: 1.2em;
+  }
+
+  .recommendation,.invite-u,.join-info p,input[type="checkbox"]+span{
+    font-size: 0.8em;
+    letter-spacing: 1px;
+  }
+  .p6_06{
+    top: 15%;
+  }
+}
+
+@media screen and (min-width: 310px) and (max-width: 821px), (height <= 700px){
+  .result-main {
+    height: 190vmax;
+    animation-name: height0;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  #result-container{
+    max-height:unset;
+    height: auto;
+  }
+  .main-container-item{
+    max-height:unset;
+    height: 180vmax;
+    overflow: hidden;
+    animation-name: height1;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  .result-part{
+    height: 180vmax;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .result-part:hover{
+    overflow-y: hidden;
+    width: 95% ;
+    margin-left: 0;
+  }
+  .info-container{
+    height: 90vmax;
+  }
+  .info-container:first-child {
+      margin:0 0 0;
+  }
+}

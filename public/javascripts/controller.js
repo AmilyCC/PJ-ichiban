@@ -7,6 +7,7 @@ var controller = {
     model.info = [];
     model.answers = [];
     model.myScores = 0;
+    document.querySelector('.main').classList.remove("result-main");
     document.getElementById("name").value = "";
     document.getElementById("gender").value = "";
     document.getElementById("age").value = "";
@@ -48,6 +49,7 @@ var controller = {
     if (model.currentQuestion >= model.questions.length) {
       view.getResult();
       view.submitForm();
+      model.setMyScores(model.myScores);
       view.displayResult();
     } else {
       view.displayQuestion();

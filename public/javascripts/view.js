@@ -14,27 +14,28 @@ var view = {
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, false);
     this.toggleContainer(resultContainer, false);    
-    this.toggleContainer(infoContainer, false);
+    
     controller.clearData();
   },
 
   displayPreTest: function () {
     document.querySelector('.top_icon_03').style.top = 'ˇ%'
     document.querySelector('.top_icon_05').style.top = '10%'
-    document.querySelector('.top_icon_14').style.top = '82%'
     document.querySelector('.top_icon_18').style.top = '95%'
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, true);
     this.toggleContainer(questionContainer, false);
     this.toggleContainer(resultContainer, false);  
-    this.toggleContainer(infoContainer, false);
+    
   },
   displayQuestion: function () {
-    timeLine.style.width = `${(model.currentQuestion+1)*10+1}%`
+    questionNum.classList.add('nextQuestion');
+    questionContent.classList.add('nextQuestion');
+    choicesElement.classList.add('nextQuestion');
+    timeLine.style.width = `${(model.currentQuestion + 1) * 10 + 1 }%`;
     questionNum.src = model.questions[model.currentQuestion].img;
-    questionContent.innerHTML =
-      model.questions[model.currentQuestion].question;
+    questionContent.innerHTML = model.questions[model.currentQuestion].question;
     choicesElement.innerHTML = "";
     model.questions[model.currentQuestion].choices.map(function (
       choice,
@@ -51,13 +52,19 @@ var view = {
       });
       li.appendChild(button);
       choicesElement.appendChild(li);
+      setTimeout(function () {
+        questionNum.classList.remove('nextQuestion');
+        questionContent.classList.remove('nextQuestion');
+        choicesElement.classList.remove('nextQuestion');
+      }, 1000);
+      
     });
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, true);
     this.toggleContainer(resultContainer, false);  
-    this.toggleContainer(infoContainer, false);
+    
   },
   getResult: function () {
     var result = model.results.find(function (result) {
@@ -101,12 +108,12 @@ var view = {
     });
   },
   displayResult: function () {
+    document.querySelector('.main').classList.add("result-main");
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, false);
     this.toggleContainer(questionContainer, false);
     this.toggleContainer(resultContainer, true);  
-    this.toggleContainer(infoContainer, false);
 
     resultName.innerHTML = `<span>${model.info.name}</span>，你是個`;
     var result = this.getResult(model.myScores);
@@ -149,12 +156,8 @@ var view = {
     });
   },
   displaycollection(){
-    this.toggleContainer(marquee, false);
-    this.toggleContainer(homeContainer, false);
-    this.toggleContainer(preTestContainer, false);
-    this.toggleContainer(questionContainer, false);
-    this.toggleContainer(resultContainer, false);
-    this.toggleContainer(infoContainer, true);
-    
+    infoContainer.scrollIntoView({
+      behavior: 'smooth' 
+    });  
   }
 };

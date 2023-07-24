@@ -1,8 +1,25 @@
+@keyframes nextQuestion {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
 #question-container{
   flex-direction: column;
   justify-content: center;
   align-content: center;
 
+}
+
+.nextQuestion{
+    animation-name: nextQuestion;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }
 
 .time-line-gp {

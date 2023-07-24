@@ -81,7 +81,7 @@
 }
 
 
-@media screen  and (max-width: 768px) {
+@media screen  and (max-width: 821px) {
     .button-c{
         height: 100vmax;
         max-height: 50px;

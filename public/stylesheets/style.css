@@ -16,7 +16,7 @@ img{
 }
 
 ::-webkit-scrollbar {
-    background: #eaeaea;
+    background:  rgb(234 234 234 / 70%);
     border-radius: 10px;
 }
 
@@ -39,7 +39,7 @@ img{
   height: 100vh;
   background-image:url(../image/sp_top/BK_50x50.png);
   background-repeat: repeat;
-  background-size: 2vw;
+  background-size: 3vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +70,7 @@ img{
   align-items: center;
   justify-content: center;
   z-index: 2;
+  overflow-x: hidden;
 }
 
 .pos-abs{
@@ -153,7 +154,7 @@ img{
 .top_icon_03 {
     width: 3%;
     max-width: 25px;
-    top: 5%;
+    top: 15%;
     left: 4vw;
 }
 .top_icon_05 {
@@ -314,7 +315,7 @@ img{
   }
 }
 
-@media screen and (min-width: 310px) and (max-width: 768px), (height <= 700px){
+@media screen and (min-width: 310px) and (max-width: 821px), (height <= 700px){
   .main-bg {
     width: 100vw;
     height: 100vh;

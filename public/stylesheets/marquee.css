@@ -80,7 +80,7 @@
   align-items: center;
 }
 
-@media screen and (max-width:  768px), (height <= 700px) {
+@media screen and (max-width:  821px), (height <= 700px) {
   .top_item_44{
     display: none;
   }
