@@ -1,4 +1,33 @@
 /* common START */
+input, button, select, optgroup, textarea {
+    margin: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    
+    /* -webkit-appearance: none;會產生checkbox消失 */
+    /* Safari 和 Chrome 常用於 iOS 下移除內建樣式 */
+    -moz-appearance: none;
+    /* FireFox */
+    appearance: none;
+  /*以下移除 Chrome 產生的按鈕陰影*/
+    outline-style: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
+    text-shadow: none;
+    -webkit-user-select: text;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+
+
+
+a {
+  text-decoration: none;
+  color: #b4d145;
+}
 * {
   box-sizing: border-box;
   background-color: transparent;
