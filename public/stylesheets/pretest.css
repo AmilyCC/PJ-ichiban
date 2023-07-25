@@ -68,8 +68,13 @@
     border: none;
     background-color: transparent;
     text-align: center;
+    color: #666;
 }
-
+option {
+    text-align: center;
+    border: none;
+    color: #666;
+}
 .button-c {
     width: 30%;
     height: 8vh;
@@ -90,6 +95,6 @@
 }
 @media screen and (min-width: 310px) and (max-width: 600px) and (height <= 700px)  {
     .input-ctrl {
-        font-size: 0.5rem;
+        font-size: 0.5em;
     }
 }
