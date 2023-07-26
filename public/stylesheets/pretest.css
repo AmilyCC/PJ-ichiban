@@ -54,6 +54,7 @@
     min-height: 50px;
     max-height: 80px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     border: 2px solid #000;
     border-radius: 100px;
@@ -70,10 +71,59 @@
     text-align: center;
     color: #666;
 }
-option {
+@keyframes select-appear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.select-appear {
+    animation-name: select-appear;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+.choose {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.select {
+    position: absolute;
+    z-index: 6;
+    top: 100%;
+    left: 20%;
+    display: none;
+    list-style: none;
+    width: 60%;
+    margin: auto;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 3px 5px 9px rgb(211 211 211 / 65%);
+}
+.option {
+    background-color: #fdfdfd;
+    padding: 10px 0;
+    font-size: 1.1em;
     text-align: center;
     border: none;
     color: #666;
+    border-bottom: 1px solid #ccc;
+}
+.option:first-child {
+    border-radius: 10px 10px 0 0;
+}
+.option:last-child {
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+.option:hover {
+    background-color: #ededed;
 }
 .button-c {
     width: 30%;

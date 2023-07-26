@@ -22,12 +22,27 @@ var view = {
     document.querySelector('.top_icon_03').style.top = 'ˇ%'
     document.querySelector('.top_icon_05').style.top = '10%'
     document.querySelector('.top_icon_18').style.top = '95%'
+    this.genderChoose()
     this.toggleContainer(marquee, false);
     this.toggleContainer(homeContainer, false);
     this.toggleContainer(preTestContainer, true);
     this.toggleContainer(questionContainer, false);
     this.toggleContainer(resultContainer, false);  
-    
+  },
+  genderChoose: function(){
+    $(".choose").click(function () {
+      if ($(".select").css("display") == "block") {
+        $(".select").hide();
+      } else {
+        $(".select").show();
+        $(".select").addClass("select-appear");
+      }
+    });
+    $(".option").click(function () {
+      var _text = $(this).text();
+      $(".choose").val(_text);
+      $(".select").hide();
+    });
   },
   displayQuestion: function () {
     questionNum.classList.add('nextQuestion');

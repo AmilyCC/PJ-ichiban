@@ -37,7 +37,7 @@ input[type="number"]{-moz-appearance:textfield;}
 input::-webkit-input-speech-button {display: none}
 a {
   text-decoration: none;
-  color: #ccc;
+  color: #666;
 }
 * {
   box-sizing: border-box;
