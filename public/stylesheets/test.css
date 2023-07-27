@@ -73,6 +73,7 @@
 .choices {
   padding: 0;
   width: 100%;
+  height: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +115,8 @@
 }
 @media screen and (min-width: 310px) and (max-width: 600px), (height <= 700px){
   .ans{
-    width: 90%;
+    height: 45%;
+    margin: auto 0;
   }
   .question{
     height: 60vmax;

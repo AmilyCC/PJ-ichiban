@@ -59,28 +59,30 @@ var controller = {
   restart: function () {
     swal({
       title: "確定要重新測驗嗎？", 
-      test:"", 
-      icob: "success",
+      icon: "warning",
+      closeOnClickOutside: true,
       buttons:{
-        cancel: {
-          text: "重新測驗",
-          visible: true,
-          value: true
-        },
         confirm: {
-          text: "留在此頁",
-          visible: true,
-          value: false
+          text: "重新測驗",
+          value: true,
+          visible: true
         },
+        cancel: {
+          text: "留在此頁",
+          value: false,
+          visible: true
+        }
       } 
-    }).then((value) => {
-      if(value){
+    })
+    .then((value)=>{
+      if (value) {
         this.clearData();
         view.displayHome();
-      }else{
-        preventDefault();
+      } else {
+        
       }
-    });
+
+    })
   },
 
   collection: function () {

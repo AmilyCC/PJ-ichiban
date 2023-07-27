@@ -271,6 +271,17 @@
     background-image: url(../image/p5/p5_13.png);
 }
 
+.swal-button--confirm {
+    background-color: #efefef !important;
+    color: #555 !important;
+}
+
+.swal-button--cancel {
+    background-color: #555 !important;
+    color: #efefef !important;
+}
+
+
 
 #info-container{
     justify-content: space-evenly;
