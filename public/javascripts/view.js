@@ -17,7 +17,6 @@ var view = {
     
     controller.clearData();
   },
-
   displayPreTest: function () {
     document.querySelector('.top_icon_03').style.top = 'ˇ%'
     document.querySelector('.top_icon_05').style.top = '10%'
@@ -31,10 +30,15 @@ var view = {
   },
   genderChoose: function(){
     $(".choose").click(function () {
-      if ($(".select").css("display") == "block") {
-        $(".select").hide();
+      if ($(".select").css("display") == "block") {        
+        $(".select").removeClass("select-appear");
+        $(".select").addClass("select-disappear");
+        setTimeout(function () {
+          $(".select").hide();
+        }, 200);
       } else {
         $(".select").show();
+        $(".select").removeClass("select-disappear");
         $(".select").addClass("select-appear");
       }
     });

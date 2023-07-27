@@ -57,8 +57,30 @@ var controller = {
   },
 
   restart: function () {
-    this.clearData();
-    view.displayHome();
+    swal({
+      title: "確定要重新測驗嗎？", 
+      test:"", 
+      icob: "success",
+      buttons:{
+        cancel: {
+          text: "重新測驗",
+          visible: true,
+          value: true
+        },
+        confirm: {
+          text: "留在此頁",
+          visible: true,
+          value: false
+        },
+      } 
+    }).then((value) => {
+      if(value){
+        this.clearData();
+        view.displayHome();
+      }else{
+        preventDefault();
+      }
+    });
   },
 
   collection: function () {

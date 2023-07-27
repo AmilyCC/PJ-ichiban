@@ -74,17 +74,36 @@
 @keyframes select-appear {
     0% {
         opacity: 0;
-        transform: scale(0);
+        transform: scale(1,0);
     }
 
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1,1);
+    }
+}
+@keyframes select-disappear {
+    0% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1,0);        
     }
 }
 .select-appear {
+    transform-origin: top;
     animation-name: select-appear;
     animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+.select-disappear {
+    transform-origin: top;
+    animation-name: select-disappear;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
@@ -92,6 +111,7 @@
     width: 100%;
     margin: 0;
     text-align: center;
+    cursor: pointer;
 }
 .select {
     position: absolute;
@@ -108,7 +128,7 @@
 }
 .option {
     background-color: #fdfdfd;
-    padding: 10px 0;
+    padding: 3% 0;
     font-size: 1.1em;
     text-align: center;
     border: none;
@@ -124,6 +144,7 @@
 }
 .option:hover {
     background-color: #ededed;
+    cursor: pointer;
 }
 .button-c {
     width: 30%;
@@ -134,6 +155,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
+    background-position: center;
 }
 
 

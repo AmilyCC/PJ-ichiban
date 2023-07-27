@@ -194,7 +194,7 @@ img{
 .top_icon_03 {
     width: 3%;
     max-width: 25px;
-    top: 15%;
+    top: 10%;
     left: 4vw;
 }
 .top_icon_05 {
@@ -356,6 +356,9 @@ img{
 }
 
 @media screen and (min-width: 310px) and (max-width: 821px), (height <= 700px){
+  .main-container{
+    height: 85%;
+  }
   .main-bg {
     width: 100vw;
     height: 100vh;
@@ -369,7 +372,7 @@ img{
     height: 100vmax;
   }
   .sp-bg {
-    height: 100vmax;
+    height: 95vmax;
   }
   .pc-bg-animation{
     display: none;

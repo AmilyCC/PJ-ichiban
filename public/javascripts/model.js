@@ -32,8 +32,8 @@ var model = {
     {
       img:"../static/image/p3/p3_q5.png",
       question: "對待<span>看不順眼的同事</span>，你會採取什麼態度?",
-      choices: ["挺好的，與我無關", "感到沮喪、悶悶不樂"],
-      scores: [0, 1] // 配分方式
+      choices: ["保持友好", "保持距離"],
+      scores: [1, 0] // 配分方式
     },
     {
       img:"../static/image/p3/p3_q6.png",
